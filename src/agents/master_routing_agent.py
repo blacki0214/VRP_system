@@ -19,4 +19,4 @@ class MasterRoutingAgent(BaseAgent):
             "capacity": message["capacity"],
             "max_distance": message["max_distance"]
         }
-        return {"type": "CAPACITY_RECEIVED"}
+        return {"type": "CAPACITY_RECEIVED"};
