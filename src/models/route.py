@@ -3,6 +3,7 @@ from typing import List
 from .location import Location
 from .parcel import Parcel
 
+
 @dataclass
 class Route:
     vehicle_id: str
