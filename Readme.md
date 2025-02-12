@@ -10,7 +10,7 @@ Implementation of a Vehicle Routing Problem (VRP) solution for a courier company
 - Nguyen Ha Minh Chau
 
 ## System Requirements
-- Python 3.8+
+- Python 3.12
 - Required libraries (to be determined)
 - GUI framework (to be determined)
 
