@@ -40,8 +40,8 @@ vrp_system/
    - Parameter settings
    - Real-time updates
 
-## System Architechture Design
-![System Architechture Design](https://github.com/blacki0214/VRP_system/blob/main/VRP.drawio.png)
+## System Sequence Diagram Design
+![System Sequence Diagram Design](https://github.com/blacki0214/VRP_system/blob/main/VRP.drawio.png)
 
 ## Setup Instructions
 1. Clone repository
