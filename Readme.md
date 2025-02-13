@@ -1,6 +1,6 @@
 # Vehicle Routing System
 
-## Project Overview
+## 📄Project Overview
 Implementation of a Vehicle Routing Problem (VRP) solution for a courier company, featuring multiple delivery agents and optimization of delivery routes.
 
 ## 🧑‍💻Team Members and Roles
@@ -25,12 +25,12 @@ Implementation of a Vehicle Routing Problem (VRP) solution for a courier company
    - Configuration management
    - Support other team members
 
-## System Requirements
+## 🧮System Requirements
 - Python 3.12
 - Required libraries (to be determined)
 - GUI framework (to be determined)
 
-## Project Structure
+## 🗃️Project Structure
 ```
 vrp_system/
 ├── src/              # Source code
@@ -39,7 +39,7 @@ vrp_system/
 └── config/           # Configuration files
 ```
 
-## Features
+## 📱Features
 1. Basic Requirements
    - Master Routing Agent (MRA)
    - Multiple Delivery Agents (DA)
@@ -56,22 +56,22 @@ vrp_system/
    - Parameter settings
    - Real-time updates
 
-## System Sequence Diagram Design
+## 💽System Sequence Diagram Design
 ![System Sequence Diagram Design](https://github.com/blacki0214/VRP_system/blob/main/VRP.drawio.png)
 
-## Setup Instructions
+## 💻Setup Instructions
 1. Clone repository
 2. Install dependencies
 3. Run tests
 4. Start application
 
-## Development Guidelines
+## 📋Development Guidelines
 - Code style: PEP 8
 - Documentation: Google style docstrings
 - Testing: pytest
 - Git workflow: feature branches + pull requests
 
-## Timeline
+## ⌚Timeline
 - Week 2: Project Setup and Planning
 - Week 3: Basic Infrastructure
 - Week 4: Agent Communication
