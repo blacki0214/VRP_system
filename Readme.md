@@ -56,11 +56,11 @@ vrp_system/
 - Git workflow: feature branches + pull requests
 
 ## Timeline
-- Week 1: Project Setup and Planning
-- Week 2: Basic Infrastructure
-- Week 3: Agent Communication
-- Week 4-5: Route Optimization
-- Week 6-7: GUI Development
-- Week 8-9: Testing
+- Week 2: Project Setup and Planning
+- Week 3: Basic Infrastructure
+- Week 4: Agent Communication
+- Week 5-6: Route Optimization
+- Week 7-8: GUI Development
+- Week 9-10: Testing
 - Week 10-12: Documentation and Presentation
 
