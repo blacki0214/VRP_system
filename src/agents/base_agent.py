@@ -10,3 +10,7 @@ class BaseAgent(ABC):
     @abstractmethod
     def process_message(self, message: Dict[str, Any]) -> Dict[str, Any]:
         pass
+
+    def update_state(self, key: str, value: Any):
+        """Cập nhật trạng thái của agent"""
+        self.state[key] = value
