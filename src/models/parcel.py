@@ -9,5 +9,5 @@ class Parcel:
     weight: float = 1.0
 
     def validate(self) -> bool:
-        """Kiểm tra tính hợp lệ của gói hàng"""
+        """Check the validity of the package"""
         return self.weight > 0
