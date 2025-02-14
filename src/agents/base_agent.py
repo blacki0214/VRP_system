@@ -12,5 +12,5 @@ class BaseAgent(ABC):
         pass
 
     def update_state(self, key: str, value: Any):
-        """Cập nhật trạng thái của agent"""
+        """Update the state of the agent"""
         self.state[key] = value
