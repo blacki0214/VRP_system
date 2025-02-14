@@ -66,7 +66,6 @@ vrp_system/
 4. Start application
 
 ## 📋Development Guidelines
-- Code style: PEP 8
 - Documentation: Google style docstrings
 - Testing: pytest
 - Git workflow: feature branches + pull requests
