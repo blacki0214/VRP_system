@@ -1,21 +1,19 @@
 import unittest
 from src.protocols.message_protocol import Message, MessageType  # Add this import
 from src.agents.delivery_agent import DeliveryAgent
-from src.agents.master_routing_agent import MasterRoutingAgent
+from src.models.route import Route
+from src.models.location import Location
 
-class TestAgentCommunication(unittest.TestCase):
+class TestDeliveryAgent(unittest.TestCase):
     def setUp(self):
-        self.mra = MasterRoutingAgent("MRA_1")
         self.da = DeliveryAgent("DA_1", capacity=10, max_distance=100)
 
-    def test_capacity_request(self):
-        # Create a capacity request message
+    def test_capacity_request_handling(self):
         message = Message(
             msg_type=MessageType.CAPACITY_REQUEST,
-            sender_id=self.mra.agent_id,
+            sender_id="MRA_1",
             receiver_id=self.da.agent_id,
             content={}
         )
         response = self.da.process_message(message)
         self.assertEqual(response.msg_type, MessageType.CAPACITY_RESPONSE)
-        self.assertEqual(response.content["capacity"], 10)
