@@ -1,4 +1,3 @@
-# tests/test_protocols/test_communication.py
 import unittest
 from src.protocols.communication_manager import CommunicationManager
 from src.agents.master_routing_agent import MasterRoutingAgent
@@ -10,11 +9,11 @@ class TestCommunication(unittest.TestCase):
         self.comm_manager = CommunicationManager()
         self.mra = MasterRoutingAgent("MRA_1")
         self.da1 = DeliveryAgent("DA_1", capacity=10, max_distance=100)
+        
         self.comm_manager.register_agent(self.mra)
         self.comm_manager.register_agent(self.da1)
 
     def test_capacity_request(self):
-        # Create and send capacity request
         request = Message(
             msg_type=MessageType.CAPACITY_REQUEST,
             sender_id=self.mra.agent_id,
@@ -25,8 +24,8 @@ class TestCommunication(unittest.TestCase):
         self.comm_manager.send_message(request)
         self.comm_manager.start()
         
-        # Verify results
+        # Wait for processing
+        import time
+        time.sleep(0.1)
+        
         self.assertTrue(self.da1.agent_id in self.mra.delivery_agents)
-
-    def tearDown(self):
-        self.comm_manager.stop()

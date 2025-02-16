@@ -28,7 +28,26 @@ class MasterRoutingAgent(BaseAgent):
             "max_distance": message.content["max_distance"]
         }
         return None
-
+    
     def _handle_route_confirmation(self, message: Message) -> Optional[Message]:
-        # Handle route confirmation
-        return None
+        """Handle route confirmation messages from Delivery Agents"""
+        agent_id = message.sender_id
+        status = message.content["status"]
+
+        if status == "accepted":
+            # Update agent's status with assigned route
+            self.delivery_agents[agent_id]["current_route"] = message.content.get("route")
+            return None
+        elif status == "rejected":
+            # Handle rejection - could implement reassignment logic here
+            reason = message.content.get("reason", "Unknown reason")
+            self.delivery_agents[agent_id]["route_status"] = f"Rejected: {reason}"
+            return None
+        else:
+            # Handle unknown status
+            return Message(
+                msg_type=MessageType.ERROR,
+                sender_id=self.agent_id,
+                receiver_id=agent_id,
+                content={"error": "Invalid route confirmation status"}
+            )
