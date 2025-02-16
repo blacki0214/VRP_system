@@ -1,37 +1,50 @@
-from typing import Dict, Any
-
+from typing import Optional
 from .base_agent import BaseAgent
-from ..models.route import Route
-from typing import Dict, Any, Optional
+from src.protocols.message_protocol import Message, MessageType
 
 class DeliveryAgent(BaseAgent):
     def __init__(self, agent_id: str, capacity: float, max_distance: float):
         super().__init__(agent_id)
         self.capacity = capacity
         self.max_distance = max_distance
-        self.current_route: Optional[Route] = None
+        self.current_route = None
+        self.message_handler = self._setup_handlers()
 
-    def process_message(self, message: Dict[str, Any]) -> Dict[str, Any]:
-        """Process messages from MRA"""
-        if message["type"] == "CAPACITY_REQUEST":
-            return self._handle_capacity_request()
-        elif message["type"] == "ROUTE_ASSIGNMENT":
-            return self._handle_route_assignment(message["route"])
-        return {"type": "ERROR", "message": "Unknown message type"}
-
-    def _handle_capacity_request(self) -> Dict[str, Any]:
-        """Handle capacity request from MRA"""
+    def _setup_handlers(self):
         return {
-            "type": "CAPACITY_RESPONSE",
-            "agent_id": self.agent_id,
-            "capacity": self.capacity,
-            "max_distance": self.max_distance
+            MessageType.CAPACITY_REQUEST: self._handle_capacity_request,
+            MessageType.ROUTE_ASSIGNMENT: self._handle_route_assignment
         }
 
-    def _handle_route_assignment(self, route: Route) -> Dict[str, Any]:
-        """Handle route assignment from MRA"""
-        self.current_route = route
-        return {
-            "type": "ROUTE_ACCEPTED",
-            "agent_id": self.agent_id
-        }
+    def process_message(self, message: Message) -> Optional[Message]:
+        if message.msg_type in self.message_handler:
+            return self.message_handler[message.msg_type](message)
+        return None
+
+    def _handle_capacity_request(self, message: Message) -> Message:
+        return Message(
+            msg_type=MessageType.CAPACITY_RESPONSE,
+            sender_id=self.agent_id,
+            receiver_id=message.sender_id,
+            content={
+                "capacity": self.capacity,
+                "max_distance": self.max_distance
+            }
+        )
+
+    def _handle_route_assignment(self, message: Message) -> Message:
+        route = message.content["route"]
+        if self._validate_route(route):
+            self.current_route = route
+            return Message(
+                msg_type=MessageType.ROUTE_CONFIRMATION,
+                sender_id=self.agent_id,
+                receiver_id=message.sender_id,
+                content={"status": "accepted"}
+            )
+        return Message(
+            msg_type=MessageType.ROUTE_CONFIRMATION,
+            sender_id=self.agent_id,
+            receiver_id=message.sender_id,
+            content={"status": "rejected"}
+        )

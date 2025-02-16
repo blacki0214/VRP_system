@@ -1,29 +1,34 @@
-from src.optimization.genetic_algorithm import GeneticAlgorithm
-from src.visualization.route_visualizater import RouteVisualizer
 
-class MasterRoutingAgent:
+from typing import Dict, List, Optional, Any  # Added Any import
+from .base_agent import BaseAgent
+from src.protocols.message_protocol import Message, MessageType
+
+class MasterRoutingAgent(BaseAgent):
     def __init__(self, agent_id: str):
-        self.agent_id = agent_id
-        self.optimizer = GeneticAlgorithm()
-        self.visualizer = RouteVisualizer()
-        self.delivery_agents = {}
-        self.parcels = []
+        super().__init__(agent_id)
+        self.delivery_agents: Dict[str, Dict[str, Any]] = {}
+        self.message_handler = self._setup_handlers()
 
-    def optimize_routes(self):
-        # Set up optimizer
-        self.optimizer.parcels = self.parcels
-        self.optimizer.constraints = {
-            'vehicle_capacities': {da_id: info['capacity'] 
-                                 for da_id, info in self.delivery_agents.items()},
-            'max_distances': {da_id: info['max_distance']
-                            for da_id, info in self.delivery_agents.items()}
+    def _setup_handlers(self):
+        handlers = {
+            MessageType.CAPACITY_RESPONSE: self._handle_capacity_response,
+            MessageType.ROUTE_CONFIRMATION: self._handle_route_confirmation
         }
+        return handlers
 
-        # Run optimization
-        optimized_routes = self.optimizer.optimize()
+    def process_message(self, message: Message) -> Optional[Message]:
+        if message.msg_type in self.message_handler:
+            return self.message_handler[message.msg_type](message)
+        return None
 
-        # Visualize routes
-        if optimized_routes:
-            self.visualizer.plot_routes(optimized_routes)
+    def _handle_capacity_response(self, message: Message) -> Optional[Message]:
+        agent_id = message.sender_id
+        self.delivery_agents[agent_id] = {
+            "capacity": message.content["capacity"],
+            "max_distance": message.content["max_distance"]
+        }
+        return None
 
-        return optimized_routes
+    def _handle_route_confirmation(self, message: Message) -> Optional[Message]:
+        # Handle route confirmation
+        return None
