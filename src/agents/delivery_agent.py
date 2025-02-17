@@ -1,6 +1,7 @@
 from typing import Optional
 from .base_agent import BaseAgent
 from src.protocols.message_protocol import Message, MessageType
+from src.models.route import Route
 
 class DeliveryAgent(BaseAgent):
     def __init__(self, agent_id: str, capacity: float, max_distance: float):
@@ -31,6 +32,21 @@ class DeliveryAgent(BaseAgent):
                 "max_distance": self.max_distance
             }
         )
+        
+    def _validate_route(self, route: Route) -> bool:
+        """
+        Validate if route meets capacity and distance constraints
+        """
+        # Check capacity constraint
+        total_weight = sum(parcel.weight for parcel in route.parcels)
+        if total_weight > self.capacity:
+            return False
+
+        # Check distance constraint
+        if route.total_distance > self.max_distance:
+            return False
+
+        return True
 
     def _handle_route_assignment(self, message: Message) -> Message:
         route = message.content["route"]

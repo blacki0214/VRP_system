@@ -50,5 +50,5 @@ class TestDeliveryAgent:
         response = da.process_message(message)
         
         assert response.msg_type == MessageType.ROUTE_CONFIRMATION
-        assert response.content["status"] == "ACCEPTED"
+        assert response.content["status"] == "accepted"
         assert da.current_route == route
