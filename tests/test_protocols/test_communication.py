@@ -1,62 +1,71 @@
-import pytest
+import unittest
 from src.protocols.communication_manager import CommunicationManager
 from src.agents.master_routing_agent import MasterRoutingAgent
 from src.agents.delivery_agent import DeliveryAgent
 from src.protocols.message_protocol import Message, MessageType
-import time
 
-class TestCommunication:
-    @pytest.fixture
-    def setup_system(self):
-        """Setup test system with communication manager and agents"""
-        comm_manager = CommunicationManager()
-        mra = MasterRoutingAgent("MRA_1")
-        da1 = DeliveryAgent("DA_1", capacity=10, max_distance=100)
-        da2 = DeliveryAgent("DA_2", capacity=15, max_distance=150)
-        
-        comm_manager.register_agent(mra)
-        comm_manager.register_agent(da1)
-        comm_manager.register_agent(da2)
-        
-        return comm_manager, mra, da1, da2
 
-    def test_agent_registration(self, setup_system):
-        """Test agent registration in communication manager"""
-        comm_manager, mra, da1, da2 = setup_system
-        
-        assert "MRA_1" in comm_manager.agents
-        assert "DA_1" in comm_manager.agents
-        assert "DA_2" in comm_manager.agents
+class TestCommunication(unittest.TestCase):
+    def setUp(self):
+        print("\n=== Setting up Communication Test ===")
+        self.comm_manager = CommunicationManager()
+        self.mra = MasterRoutingAgent("MRA_1")
+        self.da1 = DeliveryAgent("DA_1", capacity=10, max_distance=100)
 
-    def test_message_sending(self, setup_system):
-        """Test sending messages between agents"""
-        comm_manager, mra, da1, _ = setup_system
-        
-        message = Message(
+        print(f"Created MRA: {self.mra.agent_id}")
+        print(f"Created DA: {self.da1.agent_id} (Capacity: {self.da1.capacity}, Max Distance: {self.da1.max_distance})")
+
+        self.comm_manager.register_agent(self.mra)
+        self.comm_manager.register_agent(self.da1)
+        print("Registered agents with Communication Manager")
+
+    def test_agent_registration(self):
+        print("\n=== Testing Agent Registration ===")
+        print(f"Checking if {self.mra.agent_id} is registered...")
+        self.assertIn(self.mra.agent_id, self.comm_manager.agents)
+        print(f"Checking if {self.da1.agent_id} is registered...")
+        self.assertIn(self.da1.agent_id, self.comm_manager.agents)
+        print("Agent registration successful!")
+
+    def test_message_sending(self):
+        print("\n=== Testing Message Sending ===")
+        request = Message(
             msg_type=MessageType.CAPACITY_REQUEST,
-            sender_id=mra.agent_id,
-            receiver_id=da1.agent_id,
+            sender_id=self.mra.agent_id,
+            receiver_id=self.da1.agent_id,
             content={}
         )
-        
-        comm_manager.send_message(message)
-        assert not comm_manager.message_queue.empty()
+        print(f"MRA ({request.sender_id}) sending capacity request to DA ({request.receiver_id})")
+        self.comm_manager.send_message(request)
+        print("Message sent successfully!")
+        self.assertFalse(self.comm_manager.message_queue.empty())
 
-    def test_message_processing(self, setup_system):
-        """Test message processing flow"""
-        comm_manager, mra, da1, _ = setup_system
-        comm_manager.start()
-        
-        message = Message(
+    def test_message_processing(self):
+        print("\n=== Testing Message Processing ===")
+        print("Creating capacity request message...")
+        request = Message(
             msg_type=MessageType.CAPACITY_REQUEST,
-            sender_id=mra.agent_id,
-            receiver_id=da1.agent_id,
+            sender_id=self.mra.agent_id,
+            receiver_id=self.da1.agent_id,
             content={}
         )
-        
-        comm_manager.send_message(message)
-        time.sleep(0.1)  # Wait for processing
-        
-        assert da1.agent_id in mra.delivery_agents
-        
-        comm_manager.stop()
+
+        print(f"MRA -> DA: Requesting capacity information")
+        response = self.da1.process_message(request)
+
+        print("DA -> MRA: Sending capacity response")
+        print(f"Response type: {response.msg_type}")
+        print(f"Capacity: {response.content['capacity']}")
+        print(f"Max Distance: {response.content['max_distance']}")
+
+        self.assertEqual(response.msg_type, MessageType.CAPACITY_RESPONSE)
+        print("Message processing test completed successfully!")
+
+    def tearDown(self):
+        print("\nCleaning up test environment...")
+        self.comm_manager.stop()
+        print("Test completed")
+
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

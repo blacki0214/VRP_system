@@ -1,11 +1,11 @@
-from queue import Queue
+from .message_queue import MessageQueue
 from typing import Dict
 from .message_protocol import Message
 
 class CommunicationManager:
     def __init__(self):
         self.agents = {}
-        self.message_queue = Queue()
+        self.message_queue = MessageQueue()
         self._running = False
 
     def register_agent(self, agent):
