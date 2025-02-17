@@ -16,7 +16,7 @@ class TestPerformanceIntegration(unittest.TestCase):
                 receiver_id="test_receiver",
                 content={}
             )
-            self.comm_manager._process_message(message)
+            self.comm_manager.process_message(message)
 
         # Get complete metrics
         metrics = self.comm_manager.get_performance_metrics()
