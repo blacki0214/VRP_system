@@ -9,6 +9,8 @@ setup(
         'pytest>=6.2.5',
         'matplotlib>=3.4.3',
         'typing-extensions>=4.0.0',
+        'flask>=2.0.0',
+        'tabulate>=0.8.0'
     ],
     author="VRP team",
     author_email="vanquoc11082004@gmaill.com",
