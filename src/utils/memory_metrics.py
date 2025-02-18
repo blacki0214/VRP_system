@@ -1,4 +1,3 @@
-# src/utils/memory_metrics.py
 import psutil
 import os
 from dataclasses import dataclass
