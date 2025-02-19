@@ -38,7 +38,7 @@ class TestCommunication(unittest.TestCase):
         print(f"MRA ({request.sender_id}) sending capacity request to DA ({request.receiver_id})")
         self.comm_manager.send_message(request)
         print("Message sent successfully!")
-        self.assertFalse(self.comm_manager.message_queue.empty())
+        self.assertFalse(self.comm_manager.message_queue.is_empty())
 
     def test_message_processing(self):
         print("\n=== Testing Message Processing ===")
