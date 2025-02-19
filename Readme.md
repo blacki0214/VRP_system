@@ -55,6 +55,8 @@ vrp_system/
    - Route visualization
    - Parameter settings
    - Real-time updates
+## 💽Flowchart of VRP
+![System Sequence Diagram Design](https://github.com/blacki0214/VRP_system/blob/main/flowchart.png)
 
 ## 💽System Sequence Diagram Design
 ![System Sequence Diagram Design](https://github.com/blacki0214/VRP_system/blob/main/VRP.drawio.png)
