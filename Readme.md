@@ -61,6 +61,9 @@ vrp_system/
 ## 💽System Sequence Diagram Design
 ![System Sequence Diagram Design](https://github.com/blacki0214/VRP_system/blob/main/VRP.drawio.png)
 
+## 🗺️Communication System Architechture
+![Communication System Architechture](https://github.com/blacki0214/VRP_system/blob/main/communicate_flow.png)
+
 ## 💻Setup Instructions
 1. Clone repository
 2. Install dependencies
