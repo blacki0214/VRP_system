@@ -59,7 +59,7 @@ vrp_system/
 ![Flowchart of VRP](https://github.com/blacki0214/VRP_system/blob/main/flowchart.png)
 
 ## 💽System Sequence Diagram Design
-![System Sequence Diagram Design](https://github.com/blacki0214/VRP_system/blob/main/VRP.drawio.png)
+![System Sequence Diagram Design](https://github.com/blacki0214/VRP_system/blob/main/system_sequence_diagram.png)
 
 ## 🗺️Communication System Architechture
 ![Communication System Architechture](https://github.com/blacki0214/VRP_system/blob/main/communicate_flow.png)
