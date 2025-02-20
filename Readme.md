@@ -61,8 +61,12 @@ vrp_system/
 ## 💽System Sequence Diagram Design
 ![System Sequence Diagram Design](https://github.com/blacki0214/VRP_system/blob/main/system_sequence_diagram.png)
 
+##💽Performance Monitoring Flow.png
+![Performance Monitoring Flow](https://github.com/blacki0214/VRP_system/blob/main/performance_monitoring_flow.png)
+
 ## 🗺️Communication System Architechture
 ![Communication System Architechture](https://github.com/blacki0214/VRP_system/blob/main/communicate_flow.png)
+
 
 ## 💻Setup Instructions
 1. Clone repository
