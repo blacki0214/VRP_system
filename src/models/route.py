@@ -1,15 +1,22 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Dict
 from .location import Location
 from .parcel import Parcel
+from datetime import datetime
 
 
 @dataclass
 class Route:
     vehicle_id: str
-    locations: List[Location]
-    parcels: List[Parcel]
+    truck_type: str
+    order_sequence: List[str]  # Order IDs in sequence
+    cities_sequence: List[str]  # Cities in sequence
+    start_time: datetime
+    
     total_distance: float = 0.0
+    total_cost: float = 0.0
+    is_feasible: bool = True
+    violation_reason: str = ""
 
     def calculate_total_distance(self) -> float:
         """Calculate the total distance of the route"""
