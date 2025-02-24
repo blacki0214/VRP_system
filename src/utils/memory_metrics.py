@@ -57,10 +57,10 @@ class MemoryTracker:
     def get_memory_trend(self) -> Dict[str, float]:
         """Calculate memory usage trend"""
         if len(self.snapshots) < 2:
-            return {'trend': 0.0}
+            return {'trend': 0.0, 'total_change': 0.0, 'duration': 0.0}
             
         first, last = self.snapshots[0], self.snapshots[-1]
-        time_diff = last.timestamp - first.timestamp
+        time_diff = max(last.timestamp - first.timestamp, 0.001)  # Ensure non-zero
         memory_diff = last.rss - first.rss
         
         return {
