@@ -8,10 +8,8 @@ from datetime import datetime
 @dataclass
 class Route:
     vehicle_id: str
-    truck_type: str
-    order_sequence: List[str]  # Order IDs in sequence
-    cities_sequence: List[str]  # Cities in sequence
-    start_time: datetime
+    locations: List[Location]
+    parcels: List[Parcel]
     
     total_distance: float = 0.0
     total_cost: float = 0.0
