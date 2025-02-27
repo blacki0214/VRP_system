@@ -8,6 +8,7 @@ from src.models.route import Route
 from src.models.location import Location
 from src.models.parcel import Parcel
 from src.data.data_processor import DataProcessor
+import copy, random
 
 class RouteOptimizerGA:
     def __init__(self, data_processor: DataProcessor):
