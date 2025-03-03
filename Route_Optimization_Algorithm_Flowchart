@@ -1,9 +1,133 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 OPR/116.0.0.0" version="26.0.16">
   <diagram name="Page-1" id="DAoYRQPqWx3CU2TSYKu2">
-    <mxGraphModel>
+    <mxGraphModel dx="1434" dy="834" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="7tP_8BM37HE6KxGWruOm-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-2" target="7tP_8BM37HE6KxGWruOm-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-2" value="Start Route Optimization" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-3" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-5" target="7tP_8BM37HE6KxGWruOm-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-5" target="7tP_8BM37HE6KxGWruOm-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-5" value="Input Data Valid?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="200" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-7" target="7tP_8BM37HE6KxGWruOm-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-7" value="Load Optimization Parameters" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="225" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-9" target="7tP_8BM37HE6KxGWruOm-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-9" value="Extract Delivery Requirements" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-11" target="7tP_8BM37HE6KxGWruOm-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-11" value="Initialize Vehicle Fleet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="55" y="470" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-13" target="7tP_8BM37HE6KxGWruOm-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-13" value="Generate Initial Routes]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-14" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-16" target="7tP_8BM37HE6KxGWruOm-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-15" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-16" target="7tP_8BM37HE6KxGWruOm-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-16" value="Routes Feasible?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="65" y="700" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-18" target="7tP_8BM37HE6KxGWruOm-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-18" value="Adjust Route Allocation" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="840" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="7tP_8BM37HE6KxGWruOm-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="30" y="750.0022222222221" as="targetPoint" />
+            <mxPoint x="60" y="980.28" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="30" y="980" />
+              <mxPoint x="30" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-21" target="7tP_8BM37HE6KxGWruOm-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-21" value="Redistribute Parcels" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="940" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-23" target="7tP_8BM37HE6KxGWruOm-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-23" value="Calculate Initial Route Metrics" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="840" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-25" target="7tP_8BM37HE6KxGWruOm-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-25" value="Apply Optimization Algorithms" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="940" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-27" target="7tP_8BM37HE6KxGWruOm-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-27" value="Handle Data Error" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-28" value="End Route Optimization" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="850" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-29" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-31" target="7tP_8BM37HE6KxGWruOm-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-30" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-31" target="7tP_8BM37HE6KxGWruOm-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-31" value="Optimization Criteria Met?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="65" y="1050" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-33" target="7tP_8BM37HE6KxGWruOm-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-33" value="Refine Routes" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-35" target="7tP_8BM37HE6KxGWruOm-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-35" value="Update Route Constraints" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-37" target="7tP_8BM37HE6KxGWruOm-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-37" value="Select Optimal Routes" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="1070" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="7tP_8BM37HE6KxGWruOm-39" target="7tP_8BM37HE6KxGWruOm-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7tP_8BM37HE6KxGWruOm-39" value="Validate Final Routes" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="1070" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
