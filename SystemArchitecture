@@ -1,9 +1,69 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 OPR/116.0.0.0" version="26.1.0">
   <diagram name="Page-1" id="wOSF7slPM5Wt2UrrKOBU">
-    <mxGraphModel>
+    <mxGraphModel dx="1509" dy="878" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-1" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Data Layer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="10" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-2" value="Data Processor | Distance Matrix | Order Data | Time Windows" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="230" y="100" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-3" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Communication Layer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-4" value="Communication Manager | Message Queue| Agent Protocol" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="230" y="290" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-5" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Optimization Layer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="390" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-6" value="OR tools | Route Optimiztaion" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="230" y="480" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-8" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Agent Layer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="570" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-9" value="MRA | DAs | Agent Communication" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="670" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-11" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Machine Learning Layer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="770" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-12" value="Route Predictor | Feature Extraction | Cost Prediction" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="230" y="860" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-13" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;Visualization Layer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="950" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-14" value="Route Visualizer | Fitness Plotter | Performance Metrics" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="230" y="1040" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-15" value="" style="endArrow=none;html=1;rounded=0;exitX=0.523;exitY=0.001;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="W2VavTVAxgR_Pr0I27Cj-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="380" as="sourcePoint" />
+            <mxPoint x="420" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-16" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="570" as="sourcePoint" />
+            <mxPoint x="419.82" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-17" value="" style="endArrow=none;html=1;rounded=0;exitX=0.523;exitY=-0.02;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="W2VavTVAxgR_Pr0I27Cj-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="419.82" y="760" as="sourcePoint" />
+            <mxPoint x="419.82" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W2VavTVAxgR_Pr0I27Cj-18" value="" style="endArrow=none;html=1;rounded=0;exitX=0.523;exitY=0.001;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="419.57" y="950" as="sourcePoint" />
+            <mxPoint x="420" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
